@@ -133,19 +133,19 @@ print("Variável2", var2)
 
 salario = float(input("Digite o salário do colaborador: "))
 if salario <= 280:
-    percentual = 20
+    percentual = 0.2
 elif salario <= 700:
-    percentual = 15
+    percentual = 0.15
 elif salario <= 1500:
-    percentual = 10
+    percentual = 0.1
 else:
-    percentual = 5
+    percentual = 0.05
 
-valor_aumento = salario * percentual / 100
+valor_aumento = salario * percentual
 novo_salario = salario + valor_aumento
 
 print("Salário antes do reajuste: R$", round(salario, 2))
-print("Percentual de aumento aplicado:", f"{percentual}%")
+print("Percentual de aumento aplicado:", f"{percentual * 100}%")
 print("Valor do aumento: R$", round(valor_aumento, 2))
 print("Novo salário, após o aumento: R$", round(novo_salario, 2))
 
