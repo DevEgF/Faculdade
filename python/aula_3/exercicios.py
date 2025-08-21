@@ -57,7 +57,9 @@ discount3 = productValue * 0.5
 print(discount3)
 
 #6 Realiza a leitura de 1 float referente ao salário do cidadão e apresenta o salário com reajuste de 10% da inflação.
-#TODO
+salary = float(input("Digite o salario: "))
+correction = salary * 1.10
+print(round(correction, 2))
 
 #7 Realiza a leitura de 1 int e apresenta se ele é par ou ímpar
 numero = int(input("Digite um número inteiro: "))
@@ -161,19 +163,24 @@ else:
 nota1 = float(input("Digite a primeira nota: "))
 nota2 = float(input("Digite a segunda nota: "))
 media = (nota1 + nota2) / 2
+media = round(media, 2)
+
+print("A média é:", media)
 
 if media >= 9.0 and media <= 10.0:
     conceito = "A"
     print(conceito)
-elif media >= 7.5 and media < 9.0:
+elif media >= 7.5 and media <= 9.0:
     conceito = "B"
     print(conceito)
-elif media >= 6.0 and media < 7.5:
+elif media >= 6.0 and media <= 7.5:
     conceito = "C"
     print(conceito)
-elif media >= 4.0 and media < 6.0:
+elif media >= 4.0 and media <= 6.0:
     conceito = "D"
     print(conceito)
-elif media >= 0.0 and media < 4.0:
+elif media >= 0.0 and media <= 4.0:
     conceito = "E"
     print(conceito)
+else:
+    print("Nota invalida")
