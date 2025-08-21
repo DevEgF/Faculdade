@@ -174,3 +174,5 @@ elif media >= 0.0 and media <= 4.0:
 
 if conceito != "":
     print("O conceito é:", conceito)
+else:
+    print("Média inválida")
