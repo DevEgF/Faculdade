@@ -133,29 +133,21 @@ print("Variável2", var2)
 
 salario = float(input("Digite o salário do colaborador: "))
 if salario <= 280:
-    aumento = salario * 1.20
-    print("Salário antes do reajuste: R$", salario)
-    print("Percentual de aumento aplicado: 20%")
-    print("Valor do aumento: R$", salario * 0.20)
-    print("Novo salário, após o aumento: R$", round(aumento, 2))
-elif salario > 280 and salario <= 700:
-    aumento = salario * 1.15
-    print("Salário antes do reajuste: R$", salario)
-    print("Percentual de aumento aplicado: 15%")
-    print("Valor do aumento: R$", salario * 0.15)
-    print("Novo salário, após o aumento: R$", round(aumento, 2))
-elif salario > 700 and salario <= 1500:
-    aumento = salario * 1.10
-    print("Salário antes do reajuste: R$", salario)
-    print("Percentual de aumento aplicado: 10%")
-    print("Valor do aumento: R$", salario * 0.10)
-    print("Novo salário, após o aumento: R$", round(aumento, 2))
+    percentual = 20
+elif salario <= 700:
+    percentual = 15
+elif salario <= 1500:
+    percentual = 10
 else:
-    aumento = salario * 1.05
-    print("Salário antes do reajuste: R$", salario)
-    print("Percentual de aumento aplicado: 5%")
-    print("Valor do aumento: R$", salario * 0.05)
-    print("Novo salário, após o aumento: R$", round(aumento, 2))
+    percentual = 5
+
+valor_aumento = salario * percentual / 100
+novo_salario = salario + valor_aumento
+
+print("Salário antes do reajuste: R$", round(salario, 2))
+print("Percentual de aumento aplicado:", f"{percentual}%")
+print("Valor do aumento: R$", round(valor_aumento, 2))
+print("Novo salário, após o aumento: R$", round(novo_salario, 2))
 
 #12 Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e
 # calcule a sua média. A atribuição de conceitos deve obedecer à tabela acima
