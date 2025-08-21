@@ -159,20 +159,18 @@ media = round(media, 2)
 
 print("A média é:", media)
 
+conceito = ""
+
 if media >= 9.0 and media <= 10.0:
     conceito = "A"
-    print(conceito)
 elif media >= 7.5 and media <= 9.0:
     conceito = "B"
-    print(conceito)
 elif media >= 6.0 and media <= 7.5:
     conceito = "C"
-    print(conceito)
 elif media >= 4.0 and media <= 6.0:
     conceito = "D"
-    print(conceito)
 elif media >= 0.0 and media <= 4.0:
     conceito = "E"
-    print(conceito)
-else:
-    print("Nota invalida")
+
+if conceito != "":
+    print("O conceito é:", conceito)
