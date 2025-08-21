@@ -48,7 +48,13 @@ media = round(media, 2)
 print(media)
 
 #5 Realiza a leitura de 1 float referente ao valor de um produto e imprime o valor com descontos de 10%, 20% e 50%.
-#TODO
+productValue = float(input("Digite o valor do produto: "))
+discount1 = productValue * 0.9
+print(discount1)
+discount2 = productValue * 0.8
+print(discount2)
+discount3 = productValue * 0.5
+print(discount3)
 
 #6 Realiza a leitura de 1 float referente ao salário do cidadão e apresenta o salário com reajuste de 10% da inflação.
 #TODO
@@ -90,7 +96,10 @@ number2 = int(input("Digite o segundo número: "))
 
 if number1 > number2:
     print("O maior número é: ", number1)
-else: print("O maior número é: ", number2)
+elif number1 < number2:
+    print("O maior número é: ", number2)
+else:
+    print("números iguais")
 
 # 10 Faça um programa que pede dois inteiro e armazene em duas variáveis. Em seguida, troque o valor das variáveis e
 # exiba na tela
@@ -98,10 +107,12 @@ else: print("O maior número é: ", number2)
 var1 = int(input("Digite o primeiro número: "))
 var2 = int(input("Digite o segundo número: "))
 
+aux = var1
+
 var1 = var2
 print("Variável1 ", var1)
 
-var2 = var1
+var2 = aux
 print("Variável2", var2)
 
 #11 As Organizações Hamurabi Medeiros resolveram dar um aumento de salário aos seus colaboradores e lhe contrataram
