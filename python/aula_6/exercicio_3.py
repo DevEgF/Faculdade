@@ -79,40 +79,52 @@ print(f"Serão necessários {anos} anos para que a população do país A ultrap
 #Altere o programa anterior permitindo ao usuario informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita
 # repetir a operação.
 
-while True:
-    populacao_a = int(input("Digite a população do país A (maior que 0): "))
-    if populacao_a <= 0:
-        print("População inválida. Tente novamente.")
-        continue
 
-    taxa_crescimento_a = float(input("Digite a taxa de crescimento do país A (em %): ")) / 100
-    if taxa_crescimento_a < 0:
-        print("Taxa de crescimento inválida. Tente novamente.")
-        continue
+def readPopulation(country):
+    while True:
+        try:
+            value = float(input(f"Digite a população do país {country} (maior que 0): "))
+            if value > 0:
+                return value
+            print("População inválida. Tente novamente.")
+        except ValueError:
+            print("Valor inválido. Tente novamente.")
 
-    populacao_b = int(input("Digite a população do país B (maior que 0): "))
-    if populacao_b <= 0:
-        print("População inválida. Tente novamente.")
-        continue
+def readGrowthRate(country):
+    while True:
+        try:
+            tax = float(input(f"Digite a taxa de crescimento do país {country} (em %): ")) / 100
+            if tax >= 0:
+                return tax
+            print("Taxa de crescimento inválida. Tente novamente.")
+        except ValueError:
+            print("Valor inválido. Tente novamente.")
 
-    taxa_crescimento_b = float(input("Digite a taxa de crescimento do país B (em %): ")) / 100
-    if taxa_crescimento_b < 0:
-        print("Taxa de crescimento inválida. Tente novamente.")
-        continue
+def calculateYears(populationA, growthRateA, populationB, growthRateB):
+    years = 0
+    while populationA < populationB:
+        populationA += populationA * growthRateA
+        populationB += populationB * growthRateB
+        years += 1
+    return years
 
-    anos = 0
-    while populacao_a < populacao_b:
-        populacao_a += populacao_a * taxa_crescimento_a
-        populacao_b += populacao_b * taxa_crescimento_b
-        anos += 1
+def main():
+    while True:
+        populationA = readPopulation("A")
+        growthRateA = readGrowthRate("A")
+        populationB = readPopulation("B")
+        growthRateB = readGrowthRate("B")
 
-    print(f"Serão necessários {anos} anos para que a população do país A ultrapasse ou iguale a população do país B.")
+        years = calculateYears(populationA, growthRateA, populationB, growthRateB)
+        print(f"Serão necessários {years} anos para que a população do país A ultrapasse ou iguale a população do país B.")
 
-    repetir = input("Deseja repetir a operação? (s/n): ").lower()
-    if repetir != 's':
-        break
+        repeat = input("Deseja repetir a operação? (s/n): ").lower()
+        if repeat != 's':
+            break
 
-print("Programa encerrado.")
+    print("Programa encerrado.")
+
+main()
 
 #Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os
 # números um ao lado do outro.
