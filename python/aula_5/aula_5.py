@@ -37,3 +37,9 @@ for index, item in enumerate(frutas):
         print("Encontrei o kiwi")
         print("indice:", index)
         break
+
+#-------------------------------
+frutas = ["maçã", "banana", "laranja", "uva"]
+
+for index, item in enumerate(frutas):
+    print(index,"-",item)
