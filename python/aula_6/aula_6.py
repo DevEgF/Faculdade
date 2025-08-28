@@ -1,48 +1,70 @@
-option = 1
+#Sistema para adicionar, listar, deletar e pesquisar frutas na lista.
 
-frutas = []
+def main():
+    fruits = ["Uva", "Kiwi", "Maçã"]
 
-while option != 4:
-    print("\nBem vindo ao Fruit Menu \n\nEscolha uma das opções abaixo: \n\n1 - Listar \n2 - Add \n3 - Remove \n4 - Sair")
+    while True:
+        print("\n------------------------------------")
+        print("\n1) Listar \n2) Adicionar \n3) Deletar \n4) Pesquisar \n5) Sair\n")
+        print("------------------------------------\n")
 
-    option = int(input("\nEscolha uma opção: "))
+        option = int(input("\nEscolha uma opção: "))
 
-    if option == 1:
-        print("Você escolheu a opção 1, listar frutas")
-        if len(frutas) == 0:
-            print("Nenhuma fruta cadastrada")
+        if option == 1:
+            enumerateFruits(fruits)
+
+        elif option == 2:
+            appendFruit(fruits)
+
+        elif option == 3:
+            deleteFruit(fruits)
+
+        elif option == 4:
+            searchFruit(fruits)
+
+        elif option == 5:
+            break
+
         else:
-            for index, item in enumerate(frutas):
-                print(index, "-", item)
+            print("\nOpção inválida, escolha uma opção válida")
+            continue
 
-    elif option == 2:
-        print("Você escolheu a opção 2, adicione uma fruta")
-        fruta = input("Digite o nome da fruta: ")
-        frutas.append(fruta)
-        print("Fruta adicionada com sucesso!")
+    print("\nObrigado por usar o App")
 
-    elif option == 3:
-        print("Você escolheu a opção 3, remova uma fruta")
-        if len(frutas) == 0:
-            print("Nenhuma fruta cadastrada")
-        else:
-            for index, item in enumerate(frutas):
-                print(index, "-", item)
-
-            indice = int(input("Digite o índice da fruta que deseja remover: "))
-
-            if 0 <= indice < len(frutas):
-                frutas.pop(indice)
-                print("Fruta removida com sucesso!")
-
-                print("Frutas restantes:")
-                for index, item in enumerate(frutas):
-                    print(index, "-", item)
-            else:
-                print("Índice inválido")
-
-    elif option == 4:
-        print("\nObrigado por usar o App")
-
+def enumerateFruits(fruits):
+    if len(fruits) == 0:
+        print("\nNenhuma fruta cadastrada")
     else:
-        print("Opção inválida")
+        print("Frutas cadastradas: \n")
+        for index, item in enumerate(fruits):
+            print(f"{index} - {item}")
+
+def appendFruit(fruits):
+    fruit = input("Digite o nome da fruta: ").capitalize()
+    fruits.append(fruit)
+    print(f"\n{fruit} adicionada com sucesso!")
+
+def deleteFruit(fruits):
+    if not fruits:
+        print("\nA lista está vazia!")
+        return
+
+    try:
+        index = int(input("Digite o índice da fruta para remover: "))
+        fruit = fruits.pop(index)
+        print(f"\n{fruit} removida com sucesso!")
+    except (ValueError, IndexError):
+
+        print("\nÍndice inválido!")
+
+def searchFruit(fruits):
+    if not fruits:
+        print("\nA lista está vazia!")
+        return
+
+    try:
+        index = int(input("Digite o índice da fruta: "))
+        fruit = fruits[index]
+        print(f"\nFruta encontrada: {fruit}")
+    except (ValueError, IndexError):
+        print("\nÍndice inválido!")

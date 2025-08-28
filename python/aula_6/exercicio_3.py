@@ -107,20 +107,22 @@ def calculateYears(populationA, growthRateA, populationB, growthRateB):
         years += 1
     return years
 
-while True:
-    populationA = readPopulation("A")
-    growthRateA = readGrowthRate("A")
-    populationB = readPopulation("B")
-    growthRateB = readGrowthRate("B")
+def taxGrowthUp():
+    while True:
+        populationA = readPopulation("A")
+        growthRateA = readGrowthRate("A")
+        populationB = readPopulation("B")
+        growthRateB = readGrowthRate("B")
 
-    years = calculateYears(populationA, growthRateA, populationB, growthRateB)
-    print(f"Serão necessários {years} anos para que a população do país A ultrapasse ou iguale a população do país B.")
+        years = calculateYears(populationA, growthRateA, populationB, growthRateB)
+        print(
+            f"Serão necessários {years} anos para que a população do país A ultrapasse ou iguale a população do país B.")
 
-    repeat = input("Deseja repetir a operação? (s/n): ").lower()
-    if repeat != 's':
-        break
+        repeat = input("Deseja repetir a operação? (s/n): ").lower()
+        if repeat != 's':
+            break
 
-print("Programa encerrado.")
+    print("Programa encerrado.")
 
 #Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os
 # números um ao lado do outro.
