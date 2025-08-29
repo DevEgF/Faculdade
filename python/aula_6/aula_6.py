@@ -11,16 +11,16 @@ def main():
         option = int(input("\nEscolha uma opção: "))
 
         if option == 1:
-            enumerateFruits(fruits)
+            list_fruits(fruits)
 
         elif option == 2:
-            appendFruit(fruits)
+            append_fruit(fruits)
 
         elif option == 3:
-            deleteFruit(fruits)
+            delete_fruit(fruits)
 
         elif option == 4:
-            searchFruit(fruits)
+            search_fruit(fruits)
 
         elif option == 5:
             break
@@ -31,7 +31,7 @@ def main():
 
     print("\nObrigado por usar o App")
 
-def enumerateFruits(fruits):
+def list_fruits(fruits):
     if len(fruits) == 0:
         print("\nNenhuma fruta cadastrada")
     else:
@@ -39,12 +39,12 @@ def enumerateFruits(fruits):
         for index in range(len(fruits)):
             print(f"{index + 1} - {fruits[index]}")
 
-def appendFruit(fruits):
+def append_fruit(fruits):
     fruit = input("Digite o nome da fruta: ").capitalize()
     fruits.append(fruit)
     print(f"\n{fruit} adicionada com sucesso!")
 
-def deleteFruit(fruits):
+def delete_fruit(fruits):
 
     index = input("Digite o índice da fruta para remover: ")
     if not index.isdigit():
@@ -57,7 +57,7 @@ def deleteFruit(fruits):
     fruit = fruits.pop(index)
     print(f"\n{fruit} removida com sucesso!")
 
-def searchFruit(fruits):
+def search_fruit(fruits):
 
     index = input("Digite o índice da fruta: ")
     if not index.isdigit():
