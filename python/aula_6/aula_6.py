@@ -36,8 +36,8 @@ def enumerateFruits(fruits):
         print("\nNenhuma fruta cadastrada")
     else:
         print("Frutas cadastradas: \n")
-        for index, item in enumerate(fruits):
-            print(f"{index} - {item}")
+        for index in range(len(fruits)):
+            print(f"{index + 1} - {fruits[index]}")
 
 def appendFruit(fruits):
     fruit = input("Digite o nome da fruta: ").capitalize()
@@ -45,26 +45,27 @@ def appendFruit(fruits):
     print(f"\n{fruit} adicionada com sucesso!")
 
 def deleteFruit(fruits):
-    if not fruits:
-        print("\nA lista está vazia!")
-        return
 
-    try:
-        index = int(input("Digite o índice da fruta para remover: "))
-        fruit = fruits.pop(index)
-        print(f"\n{fruit} removida com sucesso!")
-    except (ValueError, IndexError):
-
+    index = input("Digite o índice da fruta para remover: ")
+    if not index.isdigit():
         print("\nÍndice inválido!")
+        return
+    index = int(index) - 1
+    if index < 0 or index >= len(fruits):
+        print("\nÍndice inválido!")
+        return
+    fruit = fruits.pop(index)
+    print(f"\n{fruit} removida com sucesso!")
 
 def searchFruit(fruits):
-    if not fruits:
-        print("\nA lista está vazia!")
-        return
 
-    try:
-        index = int(input("Digite o índice da fruta: "))
-        fruit = fruits[index]
-        print(f"\nFruta encontrada: {fruit}")
-    except (ValueError, IndexError):
+    index = input("Digite o índice da fruta: ")
+    if not index.isdigit():
         print("\nÍndice inválido!")
+        return
+    index = int(index) - 1
+    if index < 0 or index >= len(fruits):
+        print("\nÍndice inválido!")
+        return
+    fruit = fruits[index]
+    print(f"\nFruta encontrada: {fruit}")
