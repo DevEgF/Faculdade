@@ -1,8 +1,6 @@
 #Sistema para adicionar, listar, deletar e pesquisar frutas na lista.
 
-def main():
-    fruits = ["Uva", "Kiwi", "Maçã"]
-
+def super_market(fruits):
     while True:
         print("\n------------------------------------")
         print("\n1) Listar \n2) Adicionar \n3) Deletar \n4) Pesquisar \n5) Sair\n")

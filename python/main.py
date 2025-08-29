@@ -1,3 +1,3 @@
-from aula_6.aula_6 import main
+from aula_6.aula_6 import super_market
 
-main()
+super_market(["Uva", "Kiwi", "Maçã"])
