@@ -117,7 +117,7 @@ func main() {
 func toInt(s string) (int, error) {
 	i, err := strconv.Atoi(strings.TrimSpace(s))
 	if err != nil {
-		return 0, errors.New("Não é permitido caractere diferente de número, por favor insira um número válido")
+		return 0, errors.New("não é permitido caractere diferente de número, por favor insira um número válido")
 	}
 	return i, nil
 }
