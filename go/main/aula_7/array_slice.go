@@ -22,4 +22,19 @@ func main() {
 	slice = append(slice, 11)
 	slice = append(slice, 12, 13, 14)
 	fmt.Println("Updated Slice:", slice)
+
+	// Removing from a slice
+	slice = slice[:len(slice)-2]
+	fmt.Println("Slice after removal:", slice)
+
+	// Iterating over a slice
+	for i, v := range slice {
+		fmt.Printf("Index: %d, Value: %d\n", i, v)
+	}
+
+	// Slicing a slice
+	newSlice := arr[0:5]
+	fmt.Println("Sliced Portion:", newSlice)
+	newSlice = append(newSlice, 15, 16, 17)
+	fmt.Println("Updated Sliced Portion:", newSlice)
 }
