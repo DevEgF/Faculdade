@@ -14,6 +14,12 @@ type address struct {
 	zipCode int
 }
 
+// SLICE DE STRUCTS
+var list1 = []user{
+	{name: "Carlos", age: 25, address: address{street: "Rua C", city: "Belo Horizonte", zipCode: 11223}},
+	{name: "Mariana", age: 32, address: address{street: "Rua D", city: "Curitiba", zipCode: 44556}},
+}
+
 func main() {
 	var user1 user
 
