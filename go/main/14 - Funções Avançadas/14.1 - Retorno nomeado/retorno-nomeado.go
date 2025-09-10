@@ -1,0 +1,14 @@
+package main
+
+func main() {
+	// Declaração de uma função com retorno nomeado
+	soma, subtracao := calculosMatematicos(10, 20)
+	println("Resultado da soma:", soma)
+	println("Resultado da subtração:", subtracao)
+}
+
+func calculosMatematicos(n1, n2 int) (soma int, subtracao int) {
+	soma = n1 + n2
+	subtracao = n1 - n2
+	return
+}
