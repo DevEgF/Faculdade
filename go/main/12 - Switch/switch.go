@@ -29,6 +29,7 @@ func diaDaSemana2(number int) string {
 	switch number {
 	case 1:
 		result = "Domingo"
+		fallthrough // executa o próximo case mesmo que a condição não seja satisfeita
 	case 2:
 		result = "Segunda"
 	case 3:
