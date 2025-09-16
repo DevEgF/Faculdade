@@ -13,4 +13,13 @@ func main() {
 
 	fmt.Println("------------------------------------")
 	questions.Question_2()
+
+	fmt.Println("------------------------------------")
+	questions.Question_3()
+
+	fmt.Println("------------------------------------")
+	questions.Question_4()
+
+	fmt.Println("------------------------------------")
+	questions.Question_5()
 }
