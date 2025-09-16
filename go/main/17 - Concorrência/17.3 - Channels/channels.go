@@ -22,16 +22,21 @@ func main() {
 	// Continua recebendo mensagens do canal
 	// bloqueia até receber a próxima mensagem
 	// deadlock se não tiver mais mensagens
-	for {
-		// Recebe mensagem do canal
-		// Se o canal estiver fechado, a variavel aberto será false
-		mensagem, aberto := <-canal
 
-		// Se o canal estiver fechado, sai do loop
-		if !aberto {
-			break
-		}
+	//for {
+	// Recebe mensagem do canal
+	// Se o canal estiver fechado, a variavel aberto será false
+	//	mensagem, aberto := <-canal
 
+	// Se o canal estiver fechado, sai do loop
+	//	if !aberto {
+	//		break
+	//	}
+
+	//	println(mensagem)
+	//}
+
+	for mensagem := range canal {
 		println(mensagem)
 	}
 
