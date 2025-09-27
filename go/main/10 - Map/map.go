@@ -31,4 +31,12 @@ func main() {
 	}
 
 	fmt.Println(usuario2)
+
+	// Chave existente
+	idade, ok := usuario["idade"]
+	if ok {
+		fmt.Println("Idade:", idade)
+	} else {
+		fmt.Println("Idade não encontrada")
+	}
 }
