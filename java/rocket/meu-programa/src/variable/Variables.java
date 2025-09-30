@@ -3,8 +3,10 @@ package variable;
 public class Variables {
     public static void main(String[] args) {
 
+        String name;
+
         //Variavel
-        String name = "José";
+        name = "José";
         name = "Icaro";
 
         //Constantes
