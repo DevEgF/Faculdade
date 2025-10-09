@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-
+/**
+ * Programa que solicita o nome do usuário e exibe uma saudação.
+ */
 public class Exercicio1 {
     /**
      * Método principal que executa o programa.
@@ -55,10 +57,13 @@ public class Exercicio2 {
 import java.util.Scanner;
 import java.time.Year;
 
+/**
+ * Calcula a idade do usuário com base no ano de nascimento.
+ */
 public class Exercicio3 {
     /**
      * Método principal que executa o programa.
-     * Pede o ano de nascimento, subtrai do ano atual (fixado em 2025 neste exemplo)
+     * Pede o ano de nascimento, subtrai do ano atual
      * e exibe a idade resultante.
      */
     public static void main(String[] args) {
@@ -80,6 +85,9 @@ public class Exercicio3 {
 
 import java.util.Scanner;
 
+/**
+ * Converte uma temperatura de graus Celsius para Fahrenheit.
+ */
 public class Exercicio4 {
     /**
      * Método principal que executa o programa.
@@ -104,6 +112,10 @@ public class Exercicio4 {
 
 import java.util.Scanner;
 
+/**
+ * Realiza as quatro operações matemáticas básicas (soma, subtração,
+ * multiplicação e divisão) com dois números inteiros fornecidos pelo usuário.
+ */
 public class Exercicio5 {
     /**
      * Método principal que executa o programa.
@@ -137,6 +149,10 @@ public class Exercicio5 {
 
 import java.util.Scanner;
 
+/**
+ * Calcula o tempo estimado de uma viagem, com base na distância
+ * (km) e na velocidade média (km/h) informadas pelo usuário.
+ */
 public class Exercicio6 {
 
     /**
@@ -157,6 +173,37 @@ public class Exercicio6 {
         double time = (km/velocity) * 60;
 
         System.out.printf("O tempo de viagem em minutos é %.2f", time);
+
+        scr.close();
+    }
+}
+
+import java.util.Scanner;
+import java.lang.Math;
+
+/**
+ * Calcula a área e o perímetro (circunferência) de um círculo com base no raio
+ * fornecido pelo usuário.
+ */
+public class Exercicio7 {
+    /**
+     * Método principal que executa o programa.
+     * Solicita o raio de um círculo, calcula a área e o perímetro,
+     * e exibe os resultados formatados com duas casas decimais.
+     */
+    public static void main(String[] args) {
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite o raio do círculo: ");
+        double radius = scr.nextDouble();
+
+        double area = Math.PI * Math.pow(radius, 2);
+
+        // Cálculo do Perímetro (Circunferência): P = 2 * π * r
+        double perimeter = 2 * Math.PI * radius;
+
+        System.out.println("A Área é: " + area);
+        System.out.println("O Perímetro é: " + perimeter);
 
         scr.close();
     }
