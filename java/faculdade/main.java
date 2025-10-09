@@ -7,8 +7,6 @@ public class Exercicio1 {
     /**
      * Método principal que executa o programa.
      * Pede ao usuário para digitar um nome e imprime "Olá, [nome]".
-     *
-     * @param args Argumentos de linha de comando (não utilizados).
      */
     public static void main(String[] args) {
         Scanner scr = new Scanner(System.in);
