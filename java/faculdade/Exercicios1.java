@@ -206,3 +206,188 @@ public class Exercicio7 {
         scr.close();
     }
 }
+
+mport java.util.Scanner;
+
+public class Exercicie8 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite um valor em dolar: ");
+        double valueUS = scr.nextDouble();
+
+        double valueBRL = 5.10;
+
+        double convertedValue = valueUS * valueBRL;
+
+        System.out.printf("O valor equivalente em reais é %.2f", convertedValue);
+
+    }
+}
+
+//9. Cálculo do IMC
+//Peça o peso e a altura, calcule o IMC e exiba com duas casas decimais.
+//Fórmula: IMC = peso / (altura * altura)
+
+import java.util.Scanner;
+
+public class Exercicie9 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite seu peso em kg: ");
+        double weight = scr.nextDouble();
+
+        System.out.println("Digite sua altura em metros: ");
+        double height = scr.nextDouble();
+
+        double imc = weight / Math.pow(height,2);
+
+        System.out.printf("Seu IMC é %.2f", imc);
+    }
+}
+//10. Área de um Retângulo
+//Peça a base e a altura e calcule:
+//Área = base × altura
+
+import java.util.Scanner;
+
+public class Exercicie10 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite o valor da base do retângulo em cm: ");
+        double base = scr.nextDouble();
+
+        System.out.println("Digite o valor da altura do retângulo em cm: ");
+        double height = scr.nextDouble();
+
+        double area = base * height;
+
+        System.out.printf("A área do retângulo é %.2f", area);
+    }
+}
+
+//11. Idade em Segundos
+//Leia a idade da pessoa e mostre quantos segundos ela viveu.
+//Considere:
+//• 1 ano = 365 dias
+//• 1 dia = 86400 segundos
+
+import java.util.Scanner;
+
+public class Exercicie11 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite a sua idade: ");
+        int year = scr.nextInt();
+
+        int yearsInMonths = year * 12;
+
+        int yearsPerSecond = year * 86400;
+
+        System.out.printf("Você viveu exatos %s meses \n", yearsInMonths);
+        System.out.printf("Você viveu exatos %s segundos \n", yearsPerSecond);
+    }
+}
+
+//12. Teorema de Pitágoras
+//Peça os valores dos catetos a e b, e calcule a hipotenusa:
+//hipotenusa = √(a² + b²)
+//Use Math.sqrt() e System.out.printf() com 2 casas decimais.
+
+import java.util.Scanner;
+
+public class Exercicie12 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite o valor de a: ");
+        double a = scr.nextDouble();
+
+        System.out.println("Digite o volar de b: ");
+        double b = scr.nextDouble();
+
+        double aPow = Math.pow(a, 2);
+        double bPow = Math.pow(b, 2);
+
+        double sumAB = aPow + bPow;
+
+        double hypotenuse = Math.sqrt(sumAB);
+
+        System.out.printf("O valor da hipotenusa é: %.2f", hypotenuse);
+    }
+}
+
+//13. Volume de uma Esfera
+//Peça o raio (entre 1.0 e 50.0) e calcule o volume:
+//V = (4/3) × π × r³
+//Use π = 3.14 e arredonde com 2 casas decimais.
+
+import java.util.Scanner;
+
+public class Exercicie13 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.println("Digite o raio da esfera (entre 1.0 e 50.0): ");
+        double raio = scr.nextDouble();
+
+        double PI = 3.14;
+
+        double volume = (4.0/3.0) * PI * Math.pow(raio, 3);
+
+        System.out.printf("O raio da esfera é %.2f", volume);
+    }
+}
+
+//14. Conversão de Minutos em Horas e Minutos
+//Solicite uma quantidade de minutos e converta para horas e minutos.
+
+import java.util.Scanner;
+
+public class Exercicie14 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.print("Digite a quantidade de minutos: ");
+        int totalMinutos = scr.nextInt();
+
+        int horas = totalMinutos / 60;
+        int minutos = totalMinutos % 60;
+
+
+        System.out.printf("%d minutos -> %d horas e %d minutos\n", totalMinutos, horas, minutos);
+    }
+}
+
+//15. Custo de uma Refeição com Taxa de Serviço
+//Peça o valor da refeição (em reais).
+//Calcule o total com taxa de serviço de 10% e exiba com duas casas decimais.
+
+import java.util.Scanner;
+
+public class Exercicie15 {
+    public static void main(String[] args) {
+
+        Scanner scr = new Scanner(System.in);
+
+        System.out.print("Digite o valor da refeição em reais: R$ ");
+        double snackValue = scr.nextDouble();
+
+        double service = 1.10;
+
+        double snackService = snackValue * service;
+
+
+        System.out.printf("O valor total da refeição é: %.2f", snackService);
+    }
+}
