@@ -109,3 +109,62 @@ class Question6 {
         System.out.println("Acesso permitido!");
     }
 }
+
+import java.util.Scanner;
+
+class Question8 {
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Digite um valor inteiro em reais (entre 1 e 1000): R$ ");
+        int valor = teclado.nextInt();
+
+        if (valor < 1 || valor > 1000) {
+            System.out.println("Valor inválido! Por favor, insira um valor entre 1 e 1000.");
+        } else {
+            System.out.println("Para sacar R$ " + valor + ",00, você precisará de:");
+
+            int resto = valor;
+
+            int notas100 = resto / 100;
+            if (notas100 > 0) {
+                System.out.println(notas100 + " nota(s) de R$ 100");
+                resto = resto % 100;
+            }
+
+            int notas50 = resto / 50;
+            if (notas50 > 0) {
+                System.out.println(notas50 + " nota(s) de R$ 50");
+                resto = resto % 50;
+            }
+
+            int notas20 = resto / 20;
+            if (notas20 > 0) {
+                System.out.println(notas20 + " nota(s) de R$ 20");
+                resto = resto % 20;
+            }
+
+            int notas10 = resto / 10;
+            if (notas10 > 0) {
+                System.out.println(notas10 + " nota(s) de R$ 10");
+                resto = resto % 10;
+            }
+
+            int notas5 = resto / 5;
+            if (notas5 > 0) {
+                System.out.println(notas5 + " nota(s) de R$ 5");
+                resto = resto % 5;
+            }
+            int notas2 = resto / 2;
+            if (notas2 > 0) {
+                System.out.println(notas2 + " nota(s) de R$ 2");
+                resto = resto % 2;
+            }
+
+            if (resto > 0) {
+                System.out.println("e sobrará R$ " + resto + ",00 (que seriam moedas de R$ 1).");
+            }
+        }
+    }
+}
