@@ -110,6 +110,14 @@ class Question6 {
     }
 }
 
+class Question7 {
+    public static void main(String[] args) {
+        for(int i = 10; i >= 0; i-- ) {
+            System.out.println(i);
+        }
+    }
+}
+
 import java.util.Scanner;
 
 class Question8 {
@@ -123,47 +131,180 @@ class Question8 {
         if (valor < 1 || valor > 1000) {
             System.out.println("Valor inválido! Por favor, insira um valor entre 1 e 1000.");
         } else {
-            System.out.println("Para sacar R$ " + valor + ",00, você precisará de:");
+            System.out.println("\nPara sacar R$ " + valor + ",00, você precisará de:");
 
             int resto = valor;
 
             int notas100 = resto / 100;
-            if (notas100 > 0) {
-                System.out.println(notas100 + " nota(s) de R$ 100");
-                resto = resto % 100;
-            }
+            resto %= 100;
 
             int notas50 = resto / 50;
-            if (notas50 > 0) {
-                System.out.println(notas50 + " nota(s) de R$ 50");
-                resto = resto % 50;
-            }
+            resto %= 50;
 
             int notas20 = resto / 20;
-            if (notas20 > 0) {
-                System.out.println(notas20 + " nota(s) de R$ 20");
-                resto = resto % 20;
+            resto %= 20;
+
+            int notas10 = 0;
+            int notas5 = 0;
+            int notas2 = 0;
+
+            if (resto == 1 || resto == 3) {
+                // Para esses casos, a solução anterior com as notas altas é a única possível,
+                // então o resto será a sobra final.
+            } else {
+                while (resto > 0 && resto % 5 != 0) {
+                    resto -= 2;
+                    notas2++;
+                }
             }
 
-            int notas10 = resto / 10;
-            if (notas10 > 0) {
-                System.out.println(notas10 + " nota(s) de R$ 10");
-                resto = resto % 10;
-            }
+            notas10 = resto / 10;
+            resto %= 10;
 
-            int notas5 = resto / 5;
-            if (notas5 > 0) {
-                System.out.println(notas5 + " nota(s) de R$ 5");
-                resto = resto % 5;
-            }
-            int notas2 = resto / 2;
-            if (notas2 > 0) {
-                System.out.println(notas2 + " nota(s) de R$ 2");
-                resto = resto % 2;
-            }
+            notas5 = resto / 5;
+            resto %= 5;
 
-            if (resto > 0) {
-                System.out.println("e sobrará R$ " + resto + ",00 (que seriam moedas de R$ 1).");
+            int sobraFinal = resto;
+
+
+            if (notas100 > 0) System.out.println(notas100 + " nota(s) de R$ 100");
+            if (notas50 > 0) System.out.println(notas50 + " nota(s) de R$ 50");
+            if (notas20 > 0) System.out.println(notas20 + " nota(s) de R$ 20");
+            if (notas10 > 0) System.out.println(notas10 + " nota(s) de R$ 10");
+            if (notas5 > 0) System.out.println(notas5 + " nota(s) de R$ 5");
+            if (notas2 > 0) System.out.println(notas2 + " nota(s) de R$ 2");
+            if (sobraFinal > 0) System.out.println("e sobrará R$ " + sobraFinal + ",00");
+        }
+    }
+}
+
+class Question9 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Insira um número inteiro: ");
+        int numero = teclado.nextInt();
+
+        while(numero >= 1) {
+
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Question10 {
+    public static void main(String[] args) {
+        // Usar Locale.US para garantir que o ponto decimal seja lido corretamente
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Digite a escala de temperatura (C, F ou K): ");
+        // Lê a primeira letra da entrada e a converte para maiúscula
+        char escala = teclado.next().toUpperCase().charAt(0);
+
+        System.out.print("Digite o valor da temperatura: ");
+        double temperatura = teclado.nextDouble();
+
+        double celsius, fahrenheit, kelvin;
+
+        System.out.println("\n--- RESULTADO ---");
+
+        switch (escala) {
+            case 'C':
+                celsius = temperatura;
+                // Fórmula de Celsius para Fahrenheit: F = (C * 9/5) + 32
+                fahrenheit = (celsius * 9.0 / 5.0) + 32;
+                // Fórmula de Celsius para Kelvin: K = C + 273.15
+                kelvin = celsius + 273.15;
+
+                System.out.printf("%.2f °C equivale a:\n", celsius);
+                System.out.printf("%.2f °F\n", fahrenheit);
+                System.out.printf("%.2f K\n", kelvin);
+                break;
+
+            case 'F':
+                fahrenheit = temperatura;
+                // Fórmula de Fahrenheit para Celsius: C = (F - 32) * 5/9
+                celsius = (fahrenheit - 32) * 5.0 / 9.0;
+                // Calcula Kelvin a partir do valor em Celsius
+                kelvin = celsius + 273.15;
+
+                System.out.printf("%.2f °F equivale a:\n", fahrenheit);
+                System.out.printf("%.2f °C\n", celsius);
+                System.out.printf("%.2f K\n", kelvin);
+                break;
+
+            case 'K':
+                kelvin = temperatura;
+                // Fórmula de Kelvin para Celsius: C = K - 273.15
+                celsius = kelvin - 273.15;
+                // Calcula Fahrenheit a partir do valor em Celsius
+                fahrenheit = (celsius * 9.0 / 5.0) + 32;
+
+                System.out.printf("%.2f K equivale a:\n", kelvin);
+                System.out.printf("%.2f °C\n", celsius);
+                System.out.printf("%.2f °F\n", fahrenheit);
+                break;
+
+            default:
+                System.out.println("Escala inválida! Por favor, use C, F ou K.");
+                break;
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Question11 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Digite o valor do pH da solução (ex: 7.0): ");
+
+        double ph = teclado.nextDouble();
+
+        if (ph < 7.0) {
+            System.out.println("A solução é Ácida.");
+        } else if (ph == 7.0) {
+            System.out.println("A solução é Neutra.");
+        } else {
+            System.out.println("A solução é Básica.");
+        }
+    }
+}
+
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Quesiton12 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("--- CÁLCULO DE MÉDIA ACADÊMICA ---");
+        System.out.print("Digite a primeira nota (0 a 100): ");
+        double nota1 = teclado.nextDouble();
+
+        System.out.print("Digite a segunda nota (0 a 100): ");
+        double nota2 = teclado.nextDouble();
+
+        System.out.print("Digite a terceira nota (0 a 100): ");
+        double nota3 = teclado.nextDouble();
+
+        if (nota1 < 0 || nota1 > 100 || nota2 < 0 || nota2 > 100 || nota3 < 0 || nota3 > 100) {
+            System.out.println("\nErro: Uma ou mais notas estão fora do intervalo válido (0 a 100).");
+        } else {
+            double media = (nota1 + nota2 + nota3) / 3.0;
+
+            System.out.printf("\nA sua média final é: %.2f\n", media);
+            System.out.print("Situação: ");
+
+            if (media >= 70 && media <= 100) {
+                System.out.println("Aprovado");
+            } else if (media >= 40 && media < 70) {
+                System.out.println("Final");
+            } else if (media >= 0 && media < 40) {
+                System.out.println("Reprovado");
+            } else {
+                System.out.println("Média inválida");
             }
         }
     }
