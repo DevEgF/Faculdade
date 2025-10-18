@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Question1 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Digite a sua idade: ");
-        int age = teclado.nextInt();
+        int age = scanner.nextInt();
 
         if (age <= 12) {
             System.out.println("Você é uma criança");
@@ -22,15 +22,15 @@ public class Question1 {
 public class Question2 {
     public static void main(String[] args) {
 
-        Scanner leitor = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
 
         System.out.println("Digite um número inteiro: ");
-        int numero = leitor.nextInt();
+        int number = reader.nextInt();
 
 
-        if(numero > 0) {
+        if(number > 0) {
             System.out.println("O número é positivo.");
-        } else if (numero < 0) {
+        } else if (number < 0) {
             System.out.println("O número é negativo.");
         } else {
             System.out.println("O número é igual a zero.");
@@ -53,7 +53,7 @@ import java.util.Scanner;
 class Question4 {
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         Random rand = new Random();
         int randomNumber = rand.nextInt(100) + 1;
@@ -64,7 +64,7 @@ class Question4 {
 
         do {
             System.out.print("Digite seu palpite: ");
-            number = teclado.nextInt();
+            number = scanner.nextInt();
 
             if (number < randomNumber) {
                 System.out.println("O número que eu pensei é MAIOR.");
@@ -93,17 +93,17 @@ import java.util.Scanner;
 class Question6 {
     public static void main(String[] args) {
 
-        String senhaCorreta = "senha123";
+        String correctPassword = "senha123";
 
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Por favor, insira a senha: ");
-        String tentativa = teclado.nextLine();
+        String attempt = scanner.nextLine();
 
-        while (!tentativa.equals(senhaCorreta)) {
+        while (!attempt.equals(correctPassword)) {
             System.out.println("Senha incorreta!");
             System.out.println("Tente novamente: ");
 
-            tentativa = teclado.nextLine();
+            attempt = scanner.nextLine();
         }
 
         System.out.println("Acesso permitido!");
@@ -123,68 +123,66 @@ import java.util.Scanner;
 class Question8 {
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite um valor inteiro em reais (entre 1 e 1000): R$ ");
-        int valor = teclado.nextInt();
+        int value = scanner.nextInt();
 
-        if (valor < 1 || valor > 1000) {
+        if (value < 1 || value > 1000) {
             System.out.println("Valor inválido! Por favor, insira um valor entre 1 e 1000.");
         } else {
-            System.out.println("\nPara sacar R$ " + valor + ",00, você precisará de:");
+            System.out.println("\nPara sacar R$ " + value + ",00, você precisará de:");
 
-            int resto = valor;
+            int remainder = value;
 
-            int notas100 = resto / 100;
-            resto %= 100;
+            int notes100 = remainder / 100;
+            remainder %= 100;
 
-            int notas50 = resto / 50;
-            resto %= 50;
+            int notes50 = remainder / 50;
+            remainder %= 50;
 
-            int notas20 = resto / 20;
-            resto %= 20;
+            int notes20 = remainder / 20;
+            remainder %= 20;
 
-            int notas10 = 0;
-            int notas5 = 0;
-            int notas2 = 0;
+            int notes10 = 0;
+            int notes5 = 0;
+            int notes2 = 0;
 
-            if (resto == 1 || resto == 3) {
-                // Para esses casos, a solução anterior com as notas altas é a única possível,
-                // então o resto será a sobra final.
+            if (remainder == 1 || remainder == 3) {
             } else {
-                while (resto > 0 && resto % 5 != 0) {
-                    resto -= 2;
-                    notas2++;
+                while (remainder > 0 && remainder % 5 != 0) {
+                    remainder -= 2;
+                    notes2++;
                 }
             }
 
-            notas10 = resto / 10;
-            resto %= 10;
+            notes10 = remainder / 10;
+            remainder %= 10;
 
-            notas5 = resto / 5;
-            resto %= 5;
+            notes5 = remainder / 5;
+            remainder %= 5;
 
-            int sobraFinal = resto;
+            int finalRemainder = remainder;
 
 
-            if (notas100 > 0) System.out.println(notas100 + " nota(s) de R$ 100");
-            if (notas50 > 0) System.out.println(notas50 + " nota(s) de R$ 50");
-            if (notas20 > 0) System.out.println(notas20 + " nota(s) de R$ 20");
-            if (notas10 > 0) System.out.println(notas10 + " nota(s) de R$ 10");
-            if (notas5 > 0) System.out.println(notas5 + " nota(s) de R$ 5");
-            if (notas2 > 0) System.out.println(notas2 + " nota(s) de R$ 2");
-            if (sobraFinal > 0) System.out.println("e sobrará R$ " + sobraFinal + ",00");
+            if (notes100 > 0) System.out.println(notes100 + " nota(s) de R$ 100");
+            if (notes50 > 0) System.out.println(notes50 + " nota(s) de R$ 50");
+            if (notes20 > 0) System.out.println(notes20 + " nota(s) de R$ 20");
+            if (notes10 > 0) System.out.println(notes10 + " nota(s) de R$ 10");
+            if (notes5 > 0) System.out.println(notes5 + " nota(s) de R$ 5");
+            if (notes2 > 0) System.out.println(notes2 + " nota(s) de R$ 2");
+            if (finalRemainder > 0) System.out.println("e sobrará R$ " + finalRemainder + ",00");
         }
     }
 }
 
 class Question9 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Insira um número inteiro: ");
-        int numero = teclado.nextInt();
+        int number = scanner.nextInt();
 
-        while(numero >= 1) {
+        while(number >= 1) {
 
         }
     }
@@ -194,26 +192,22 @@ import java.util.Scanner;
 
 public class Question10 {
     public static void main(String[] args) {
-        // Usar Locale.US para garantir que o ponto decimal seja lido corretamente
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a escala de temperatura (C, F ou K): ");
-        // Lê a primeira letra da entrada e a converte para maiúscula
-        char escala = teclado.next().toUpperCase().charAt(0);
+        char scale = scanner.next().toUpperCase().charAt(0);
 
         System.out.print("Digite o valor da temperatura: ");
-        double temperatura = teclado.nextDouble();
+        double temperature = scanner.nextDouble();
 
         double celsius, fahrenheit, kelvin;
 
         System.out.println("\n--- RESULTADO ---");
 
-        switch (escala) {
+        switch (scale) {
             case 'C':
-                celsius = temperatura;
-                // Fórmula de Celsius para Fahrenheit: F = (C * 9/5) + 32
+                celsius = temperature;
                 fahrenheit = (celsius * 9.0 / 5.0) + 32;
-                // Fórmula de Celsius para Kelvin: K = C + 273.15
                 kelvin = celsius + 273.15;
 
                 System.out.printf("%.2f °C equivale a:\n", celsius);
@@ -222,10 +216,8 @@ public class Question10 {
                 break;
 
             case 'F':
-                fahrenheit = temperatura;
-                // Fórmula de Fahrenheit para Celsius: C = (F - 32) * 5/9
+                fahrenheit = temperature;
                 celsius = (fahrenheit - 32) * 5.0 / 9.0;
-                // Calcula Kelvin a partir do valor em Celsius
                 kelvin = celsius + 273.15;
 
                 System.out.printf("%.2f °F equivale a:\n", fahrenheit);
@@ -234,10 +226,8 @@ public class Question10 {
                 break;
 
             case 'K':
-                kelvin = temperatura;
-                // Fórmula de Kelvin para Celsius: C = K - 273.15
+                kelvin = temperature;
                 celsius = kelvin - 273.15;
-                // Calcula Fahrenheit a partir do valor em Celsius
                 fahrenheit = (celsius * 9.0 / 5.0) + 32;
 
                 System.out.printf("%.2f K equivale a:\n", kelvin);
@@ -256,11 +246,11 @@ import java.util.Scanner;
 
 public class Question11 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor do pH da solução (ex: 7.0): ");
 
-        double ph = teclado.nextDouble();
+        double ph = scanner.nextDouble();
 
         if (ph < 7.0) {
             System.out.println("A solução é Ácida.");
@@ -273,39 +263,150 @@ public class Question11 {
 }
 
 import java.util.Scanner;
-import java.util.Locale;
 
-public class Quesiton12 {
+public class Question12 {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--- CÁLCULO DE MÉDIA ACADÊMICA ---");
         System.out.print("Digite a primeira nota (0 a 100): ");
-        double nota1 = teclado.nextDouble();
+        double grade1 = scanner.nextDouble();
 
         System.out.print("Digite a segunda nota (0 a 100): ");
-        double nota2 = teclado.nextDouble();
+        double grade2 = scanner.nextDouble();
 
         System.out.print("Digite a terceira nota (0 a 100): ");
-        double nota3 = teclado.nextDouble();
+        double grade3 = scanner.nextDouble();
 
-        if (nota1 < 0 || nota1 > 100 || nota2 < 0 || nota2 > 100 || nota3 < 0 || nota3 > 100) {
-            System.out.println("\nErro: Uma ou mais notas estão fora do intervalo válido (0 a 100).");
+        if (grade1 < 0 || grade1 > 100 || grade2 < 0 || grade2 > 100 || grade3 < 0 || grade3 > 100) {
+            System.out.println("Erro: Uma ou mais notas estão fora do intervalo válido (0 a 100).");
         } else {
-            double media = (nota1 + nota2 + nota3) / 3.0;
+            double average = (grade1 + grade2 + grade3) / 3.0;
 
-            System.out.printf("\nA sua média final é: %.2f\n", media);
+            System.out.printf("\nA sua média final é: %.2f\n", average);
             System.out.print("Situação: ");
 
-            if (media >= 70 && media <= 100) {
+            if (average >= 70 && average <= 100) {
                 System.out.println("Aprovado");
-            } else if (media >= 40 && media < 70) {
+            } else if (average >= 40 && average < 70) {
                 System.out.println("Final");
-            } else if (media >= 0 && media < 40) {
+            } else if (average >= 0 && average < 40) {
                 System.out.println("Reprovado");
             } else {
                 System.out.println("Média inválida");
             }
         }
+    }
+}
+
+import java.util.Scanner;
+
+public class Question13 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite sua temperatura em graus Celsius: ");
+
+        if (!scanner.hasNextDouble()) {
+            System.out.println("\nEntrada inválida. Por favor, digite um valor numérico para a temperatura.");
+            return;
+        }
+        double temperature = scanner.nextDouble();
+        scanner.nextLine();
+
+        System.out.print("Está com secreção nasal? (S/N): ");
+        String nasalSecretion = scanner.nextLine().toUpperCase().trim();
+
+        System.out.print("Está com tosse? (S/N): ");
+        String cough = scanner.nextLine().toUpperCase().trim();
+
+        System.out.print("Está com dor no corpo? (S/N): ");
+        String bodyAche = scanner.nextLine().toUpperCase().trim();
+
+        if ((!nasalSecretion.equals("S") && !nasalSecretion.equals("N")) ||
+                (!cough.equals("S") && !cough.equals("N")) ||
+                (!bodyAche.equals("S") && !bodyAche.equals("N"))) {
+
+            System.out.println("\nEntrada inválida. Por favor, responda apenas com 'S' ou 'N'.");
+            return;
+        }
+
+        boolean allSymptomsYes = nasalSecretion.equals("S") && cough.equals("S") && bodyAche.equals("S");
+        boolean allSymptomsNo = nasalSecretion.equals("N") && cough.equals("N") && bodyAche.equals("N");
+
+        if (temperature >= 37.0) {
+            if (allSymptomsYes) {
+                System.out.println("\nResultado: Exames Especiais");
+            } else if (allSymptomsNo) {
+                System.out.println("\nResultado: Exames Básicos");
+            }
+
+        } else {
+            if (allSymptomsNo) {
+                System.out.println("\nResultado: Liberado");
+            } else {
+                System.out.println("\nResultado: Exames Básicos");
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Question14 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o ano da primeira dose da vacina: ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Entrada inválida. Por favor, digite um ano válido.");
+            return;
+        }
+        int firstDoseYear = scanner.nextInt();
+
+        System.out.print("Digite o intervalo de anos entre as doses (periodicidade): ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Entrada inválida. Por favor, digite um número inteiro para o intervalo.");
+            return;
+        }
+        int yearInterval = scanner.nextInt();
+
+        System.out.println("\n--- Calendário de Vacinação ---");
+
+
+        for (int i = 0; i < 4; i++) {
+
+            int doseYear = firstDoseYear + (i * yearInterval);
+
+            System.out.println((i + 1) + "ª dose: " + doseYear);
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Question15 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Quantas moedas de R$ 0,25 você tem? ");
+        int coins25 = scanner.nextInt();
+
+        System.out.println("Quantas moedas de R$ 0,50 você tem? ");
+        int coins50 = scanner.nextInt();
+
+        System.out.println("Quantas moedas de R$ 1,00 você tem? ");
+        int coins100 = scanner.nextInt();
+
+        double totalFrom25 = coins25 * 0.25;
+        double totalFrom50 = coins50 * 0.50;
+        double totalFrom100 = coins100 * 1.00;
+
+        double totalValue = totalFrom25 + totalFrom50 + totalFrom100;
+
+        System.out.printf("O valor total economizado é: R$ %.2f\n", totalValue);
     }
 }
