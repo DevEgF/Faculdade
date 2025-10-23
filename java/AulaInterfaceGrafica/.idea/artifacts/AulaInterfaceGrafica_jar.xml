@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AulaInterfaceGrafica:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AulaInterfaceGrafica_jar</output-path>
+    <root id="archive" name="AulaInterfaceGrafica.jar">
+      <element id="module-output" name="AulaInterfaceGrafica" />
+    </root>
+  </artifact>
+</component>
